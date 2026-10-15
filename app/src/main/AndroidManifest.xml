@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Se han añadido permisos -->
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- Pide permisos al sistema y al usuario para acceder al lente de la camara-->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Permite que la app se conecte a redes y pueda salir a internet NO OLVIDAR AÑADIR PARA QUE DEEP LEARNING!!-->
+
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <!-- =true especifica que la app requiere de de un requisito físico (camara) para que la app funcione-->
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ReconocimientoFacial"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
