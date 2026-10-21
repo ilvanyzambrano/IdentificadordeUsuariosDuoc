@@ -3,11 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Permisos de Cámara e Internet -->
+
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <!-- Permite la instalación en emuladores o dispositivos sin cámara física obligatoria -->
-    <uses-feature android:name="android.hardware.camera" android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -21,6 +20,15 @@
         android:usesCleartextTraffic="true">
         <!-- ^^^ CRÍTICO: Habilita el tráfico HTTP sin cifrar para conectar con tu API local -->
 
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
         <activity
             android:name=".MainActivity"
             android:exported="true"
