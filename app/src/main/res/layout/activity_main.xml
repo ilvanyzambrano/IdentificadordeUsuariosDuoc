@@ -4,37 +4,44 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="16dp">
+    android:padding="20dp">
 
+    <!-- scaleType="fitCenter" evita que la foto se deforme -->
     <ImageView
         android:id="@+id/ivFoto"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:scaleType="centerCrop"
-        android:background="#E0E0E0"
-        android:contentDescription="Foto capturada" />
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="fitCenter"
+        android:background="#E0E0E0" />
 
     <Button
         android:id="@+id/btnTomarFoto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="30dp"
         android:text="Tomar Foto" />
+
+
+    <Button
+        android:id="@+id/btnAbrirGaleria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Elegir de la Galería" />
 
     <Button
         android:id="@+id/btnEnviarApi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="10dp"
         android:text="Consultar con la API" />
 
     <TextView
         android:id="@+id/tvResultado"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:text="Resultado: Esperando imagen..." />
-
+        android:text="Esperando imagen..." />
 </LinearLayout>

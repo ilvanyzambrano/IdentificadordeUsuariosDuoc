@@ -37,6 +37,16 @@ android {
 }
 
 dependencies {
+
+
+    // Retrofit para peticiones HTTP
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // OkHttp para el cliente y logs de red
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+
     //Se han añadido las siguientes dependencias
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     // librería principal para realizar peticiones HTTP a servidores.
@@ -66,6 +76,7 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.exifinterface)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
